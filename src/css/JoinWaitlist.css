@@ -1,0 +1,113 @@
+.join-waitlist .ai_2 {
+  position: absolute;
+  bottom: 0;
+}
+.join-waitlist .blured-effect {
+  display: none;
+}
+.join-waitlist .container {
+  width: 70%;
+  overflow-y: scroll;
+  z-index: 1;
+  flex: 1;
+}
+.join-waitlist .container h1 {
+  text-align: center;
+  font-family: Raleway;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 70px;
+  letter-spacing: -6px;
+}
+.join-waitlist .container p {
+  padding: 40px 0;
+  padding-bottom: 20px;
+  color: var(--color-grey-Deepwhite, #f6f6f6);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  width: 80%;
+}
+.join-waitlist .container .features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+.join-waitlist .container .features .feature {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+.join-waitlist .container .features .feature .txt {
+  margin: 0;
+  padding: 0;
+  color: #f6f6f6;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+.join-waitlist .container .features .feature .txt span {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+.join-waitlist .container .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.join-waitlist .container .label .arrow {
+  position: absolute;
+  right: -180px;
+  top: -70px;
+  z-index: 1;
+}
+.join-waitlist .container .label input {
+  width: 500px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 1px solid var(--color-grey-Grey, #cdcdcd);
+  background: var(--color-grey-Altblack, #323232);
+  font-family: inherit;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-grey-Deepwhite, #f6f6f6);
+}
+.join-waitlist .container .label input::-moz-placeholder {
+  color: var(--color-grey-Ash-Stroke, #8a8a8a);
+}
+.join-waitlist .container .label input::placeholder {
+  color: var(--color-grey-Ash-Stroke, #8a8a8a);
+}
+.join-waitlist .container .label input:hover {
+  border-radius: 20px;
+  background: var(--color-grey-Black, #1c1c1c);
+  box-shadow: 0px 0px 20px 0px #eee8aa;
+}
+.join-waitlist .container .label .text {
+  padding-top: 10px;
+  padding-bottom: 150px;
+  color: var(--High-Radiant, var(--color-grey-Grey-Line, #ececec));
+  text-align: center;
+  font-family: Raleway;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}/*# sourceMappingURL=JoinWaitlist.css.map */
