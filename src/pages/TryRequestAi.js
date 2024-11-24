@@ -54,7 +54,7 @@ const TryRequestAi = () => {
           </div>
 
           <div className="input">
-            <input type="text" placeholder="Type here" />
+            <input type="text" placeholder="Type here..." />
             <span>
               <img src="/svgs/send.svg" alt="" />
             </span>
