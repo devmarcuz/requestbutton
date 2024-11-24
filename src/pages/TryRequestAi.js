@@ -9,7 +9,9 @@ const TryRequestAi = () => {
       <img src="/svgs/AI_3.svg" alt="" className="ai_3" />
       <div className="chat-section">
         <div className="chat-container">
-          <h1>AI Assistant</h1>
+          <div className="fixed-title">
+            <h1>AI Assistant</h1>
+          </div>
 
           <div className="chats">
             <div className="chatbox">

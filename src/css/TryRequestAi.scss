@@ -28,40 +28,41 @@
       backdrop-filter: blur(25px);
       position: relative;
 
-      h1 {
-        position: fixed;
-        top: 50px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        font-family: Raleway;
-        font-size: 35px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: normal;
-        letter-spacing: -2px;
-        opacity: 0.5;
-        z-index: 10;
-        background: var(
-          --Radiant-Vertical,
-          linear-gradient(
-            270deg,
-            #914ceb 0%,
-            #cd5c5c 20%,
-            #ff8c00 40%,
-            #eee8aa 60%,
-            #2e8b57 80%,
-            #4682b4 100%
-          )
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .fixed-title {
+        width: 100%;
+        height: 130px;
+
+        h1 {
+          padding-top: 50px;
+          text-align: center;
+          font-family: Raleway;
+          font-size: 35px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          letter-spacing: -2px;
+          opacity: 0.5;
+          z-index: 10;
+          background: var(
+            --Radiant-Vertical,
+            linear-gradient(
+              270deg,
+              #914ceb 0%,
+              #cd5c5c 20%,
+              #ff8c00 40%,
+              #eee8aa 60%,
+              #2e8b57 80%,
+              #4682b4 100%
+            )
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
 
       .chats {
         padding: 0 15px;
-        padding-top: 120px;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;

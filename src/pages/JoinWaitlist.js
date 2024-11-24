@@ -9,7 +9,10 @@ const JoinWaitlist = () => {
     <div className="home join-waitlist">
       <img src="/svgs/AI_2.svg" alt="" className="ai_2" />
       <div className="container">
-        <h1>Be the First to Experience RequestButton!</h1>
+        <h1>
+          Be the First to <br /> Experience <br />
+          RequestButton!
+        </h1>
         <p>
           Experience the ultimate platform for managing reservations, orders,
           and promotions with cutting-edge features like AI recommendations, 3D

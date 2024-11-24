@@ -24,11 +24,12 @@
           backdrop-filter: blur(25px);
   position: relative;
 }
-.try-request .chat-section .chat-container h1 {
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+.try-request .chat-section .chat-container .fixed-title {
+  width: 100%;
+  height: 130px;
+}
+.try-request .chat-section .chat-container .fixed-title h1 {
+  padding-top: 50px;
   text-align: center;
   font-family: Raleway;
   font-size: 35px;
@@ -45,7 +46,6 @@
 }
 .try-request .chat-section .chat-container .chats {
   padding: 0 15px;
-  padding-top: 120px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
