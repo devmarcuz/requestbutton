@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../css/Home.css";
 import "../css/ContactUs.css";
 import ActionNavs from "../components/ActionNavs";
 
 const ContactUs = () => {
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
+  const handleCopy = (text, index) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 1000);
+    });
+  };
+
+  const items = [
+    { text: "withyou@requestbutton.com" },
+    { text: "+234 906 010 0257" },
+    { text: "+234 803 591 5522" },
+  ];
+
   return (
     <div className="home contact-us">
       <img src="/svgs/AI_4.svg" alt="" className="ai_3" />
@@ -15,18 +31,45 @@ const ContactUs = () => {
           <div className="contain">
             <img src="/svgs/request_lg.svg" alt="" />
             <div className="wrapper">
-              <div className="wrap">
-                <p>withyou@requestbutton.com</p>
-                <img src="/svgs/copy.svg" alt="" />
-              </div>
-              <div className="wrap">
-                <p> +234 906 010 0257</p>
-                <img src="/svgs/copy.svg" alt="" />
-              </div>
-              <div className="wrap">
-                <p> +234 803 591 5522</p>
-                <img src="/svgs/copy.svg" alt="" />
-              </div>
+              {items.map((item, index) => (
+                <div
+                  className="wrap"
+                  style={{ position: "relative" }}
+                  key={index}
+                >
+                  <p>{item.text}</p>
+                  <img
+                    src="/svgs/copy.svg"
+                    alt="Copy Icon"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleCopy(item.text, index)}
+                  />
+                  <AnimatePresence>
+                    {copiedIndex === index && (
+                      <motion.div
+                        className="copied-message"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        style={{
+                          position: "absolute",
+                          top: "-25px",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          background: "black",
+                          color: "white",
+                          padding: "5px 10px",
+                          borderRadius: "5px",
+                          fontSize: "12px",
+                        }}
+                      >
+                        Copied!
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
           </div>
         </div>

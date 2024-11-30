@@ -87,6 +87,18 @@
   cursor: pointer;
   opacity: 0.5;
 }
+.contact-us main .left-main .contain .wrapper .wrap .copied-message {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 10;
+}
 .contact-us main .right-main {
   flex: 0.45;
   display: flex;

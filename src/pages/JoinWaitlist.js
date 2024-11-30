@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const JoinWaitlist = () => {
   return (
-    <div className="home join-waitlist">
+    <div className=" join-waitlist">
       <img src="/svgs/AI_2.svg" alt="" className="ai_2" />
       <div className="container">
         <h1>
