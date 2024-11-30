@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 1434px;
 }
 .contact-us main .left-main {
   flex: 0.55;
