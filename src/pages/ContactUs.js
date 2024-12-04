@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../css/Home.css";
 import "../css/ContactUs.css";
@@ -6,6 +6,30 @@ import ActionNavs from "../components/ActionNavs";
 
 const ContactUs = () => {
   const [copiedIndex, setCopiedIndex] = useState(null);
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (isSubmit) {
+      setStep(0);
+    }
+  }, [isSubmit]);
+
+  // Simulate step changes for testing
+  useEffect(() => {
+    if (isSubmit) {
+      const timer = setTimeout(() => setStep(1), 2000);
+      const timer2 = setTimeout(() => setStep(2), 3000);
+      const timer3 = setTimeout(() => setStep(3), 5000);
+      const timer4 = setTimeout(() => setIsSubmit(false), 7000);
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        clearTimeout(timer4);
+      };
+    }
+  }, [isSubmit]);
 
   const handleCopy = (text, index) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -20,8 +44,101 @@ const ContactUs = () => {
     { text: "+234 803 591 5522" },
   ];
 
+  const submitContact = () => {
+    setIsSubmit(true);
+  };
+
   return (
     <div className="home contact-us">
+      <AnimatePresence>
+        {isSubmit && (
+          <div className="modal">
+            <motion.div
+              className="modal-container"
+              initial={{ y: "-100px", opacity: 0 }}
+              animate={{ y: "40px", opacity: 1 }}
+              exit={{ y: "-100px", opacity: 0 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+            >
+              <AnimatePresence mode="wait">
+                {step === 0 && (
+                  <motion.div
+                    className="content"
+                    key="loading"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img src="/svgs/loadingIcon.svg" alt="Loading Icon" />
+                  </motion.div>
+                )}
+
+                {step === 1 && (
+                  <motion.div
+                    className="content"
+                    key="success"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img src="/svgs/check.svg" alt="Check Icon" />
+                    <p>Thank You for Reaching Out! 🙌</p>
+                  </motion.div>
+                )}
+
+                {step === 2 && (
+                  <motion.div
+                    className="content"
+                    key="thankyou"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      padding: 60,
+                      paddingLeft: 40,
+                      paddingRight: 40,
+                    }}
+                  >
+                    <h2>
+                      We’ve received your message and <br /> will get back to
+                      you shortly.
+                    </h2>
+                    <div className="txt">
+                      Our team is here to assist and ensure you have the best
+                      experience with <br /> RequestButton.
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 3 && (
+                  <motion.div
+                    className="content"
+                    key="checkemail"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      padding: 60,
+                      paddingLeft: 40,
+                      paddingRight: 40,
+                    }}
+                  >
+                    <h2>
+                      📬 Check your email for a confirmation of your inquiry.
+                      For urgent <br />
+                      matters, feel free to call us directly.
+                    </h2>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
       <img src="/svgs/AI_4.svg" alt="" className="ai_3" />
       <main>
         <div className="left-main">
@@ -108,7 +225,7 @@ const ContactUs = () => {
           </div>
         </div>
       </main>
-      <ActionNavs />
+      <ActionNavs submitContact={submitContact} />
     </div>
   );
 };

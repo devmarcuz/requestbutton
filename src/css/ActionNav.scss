@@ -65,9 +65,36 @@
       border-radius: 20px;
       background: var(--color-grey-Black, #1c1c1c);
       box-shadow: 0px 0px 20px 0px #eee8aa;
+      transition: 0.3s all ease-in-out;
 
       &.contact {
         box-shadow: 0px 0px 20px 0px #4682b4;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 10px 0px #eee8aa;
+
+        &.contact {
+          box-shadow: 0px 0px 10px 0px #4682b4;
+        }
+
+        p {
+          background: var(
+            --Radiant-Vertical,
+            linear-gradient(
+              270deg,
+              #914ceb 0%,
+              #cd5c5c 20%,
+              #ff8c00 40%,
+              #eee8aa 60%,
+              #2e8b57 80%,
+              #4682b4 100%
+            )
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
   }
