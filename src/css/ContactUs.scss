@@ -74,7 +74,7 @@
     padding: 80px 136px;
     padding-bottom: 20px;
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: space-between;
     width: 1434px;
 
@@ -194,6 +194,7 @@
       flex: 0.45;
       display: flex;
       height: 100%;
+      max-height: 700px;
       padding: 30px;
       justify-content: space-between;
       flex-direction: column;
