@@ -157,7 +157,25 @@
   top: -70px;
   z-index: 1;
 }
-.join-waitlist .container .label input {
+.join-waitlist .container .label form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.join-waitlist .container .label form .text-field {
+  display: flex;
+  height: 70px;
+  padding: 5px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 25px;
+  background: var(--Ratotated-Radiant, linear-gradient(270deg, rgba(151, 71, 255, 0.1) 0%, rgba(205, 92, 92, 0.1) 20%, rgba(255, 140, 0, 0.1) 40%, rgba(238, 232, 170, 0.1) 60%, rgba(46, 139, 87, 0.1) 80%, rgba(70, 130, 180, 0.1) 100%));
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  margin-right: 5px;
+}
+.join-waitlist .container .label form .text-field input {
   width: 500px;
   padding: 20px 30px;
   border-radius: 20px;
@@ -171,13 +189,47 @@
   line-height: normal;
   color: var(--color-grey-Deepwhite, #f6f6f6);
 }
-.join-waitlist .container .label input::-moz-placeholder {
+.join-waitlist .container .label form .text-field input::-moz-placeholder {
   color: var(--color-grey-Ash-Stroke, #8a8a8a);
 }
-.join-waitlist .container .label input::placeholder {
+.join-waitlist .container .label form .text-field input::placeholder {
   color: var(--color-grey-Ash-Stroke, #8a8a8a);
 }
-.join-waitlist .container .label input:hover {
+.join-waitlist .container .label form .btn {
+  display: flex;
+  height: 70px;
+  padding: 5px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 25px;
+  background: var(--Ratotated-Radiant, linear-gradient(270deg, rgba(151, 71, 255, 0.1) 0%, rgba(205, 92, 92, 0.1) 20%, rgba(255, 140, 0, 0.1) 40%, rgba(238, 232, 170, 0.1) 60%, rgba(46, 139, 87, 0.1) 80%, rgba(70, 130, 180, 0.1) 100%));
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+.join-waitlist .container .label form .btn button {
+  background: none;
+  outline: none;
+  border: none;
+  display: flex;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 20px;
+  background: var(--color-grey-Black, #1c1c1c);
+  color: var(--color-grey-Grey-Line, #ececec);
+  text-align: center;
+  font-family: inherit;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+.join-waitlist .container .label form .btn button:hover {
   border-radius: 20px;
   background: var(--color-grey-Black, #1c1c1c);
   box-shadow: 0px 0px 20px 0px #eee8aa;

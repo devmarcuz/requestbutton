@@ -71,7 +71,9 @@ const JoinWaitlist = () => {
   //   }
   // }, [isSubmit]);
 
-  const submitEmail = () => {
+  const submitEmail = (e) => {
+    e.preventDefault();
+
     setIsSubmit(true);
   };
 
@@ -215,12 +217,19 @@ const JoinWaitlist = () => {
               ease: "easeInOut", // Smooth movement
             }}
           />
-          <input type="email" placeholder="name@gmail.com" />
+          <form action="" onSubmit={submitEmail}>
+            <div className="text-field">
+              <input type="email" placeholder="name@gmail.com" />
+            </div>
+            <div className="btn">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
           <div className="text">Your information is safe with us. </div>
         </div>
         i
       </div>
-      <ActionNavs submitEmail={submitEmail} />
+      <ActionNavs />
     </div>
   );
 };

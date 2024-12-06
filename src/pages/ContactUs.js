@@ -44,7 +44,9 @@ const ContactUs = () => {
     { text: "+234 803 591 5522" },
   ];
 
-  const submitContact = () => {
+  const submitContact = (e) => {
+    e.preventDefault();
+
     setIsSubmit(true);
   };
 
@@ -140,7 +142,7 @@ const ContactUs = () => {
         )}
       </AnimatePresence>
       <img src="/svgs/AI_4.svg" alt="" className="ai_3" />
-      <main>
+      <div className="main">
         <div className="left-main">
           <h1>
             We would <br /> love to hear <br /> from you
@@ -194,7 +196,7 @@ const ContactUs = () => {
           <h1>
             Have questions, feedback, or need assistance? We’re here to help
           </h1>
-          <div className="form">
+          <form onSubmit={submitContact} className="form">
             <div className="label">
               <label htmlFor="">Full name *</label>
               <input type="text" placeholder="Enter your full name" required />
@@ -222,10 +224,13 @@ const ContactUs = () => {
               <label htmlFor="">Your message *</label>
               <textarea placeholder="Write your message here…" />
             </div>
-          </div>
+            <div className="btn">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
         </div>
-      </main>
-      <ActionNavs submitContact={submitContact} />
+      </div>
+      <ActionNavs />
     </div>
   );
 };

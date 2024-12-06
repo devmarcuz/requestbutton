@@ -2,7 +2,7 @@ import React from "react";
 import "../css/ActionNav.css";
 import { Link, useLocation } from "react-router-dom";
 
-const ActionNavs = ({ submitEmail, submitContact }) => {
+const ActionNavs = () => {
   const location = useLocation();
   const path = location.pathname;
 
@@ -16,8 +16,8 @@ const ActionNavs = ({ submitEmail, submitContact }) => {
           Join Waitlist
         </Link>
       ) : (
-        <div to="/join-waitlist" onClick={submitEmail} className="nav nav-btn">
-          <p> Join Waitlist Now</p>
+        <div to="/join-waitlist" className="nav active">
+          <p> Join Waitlist</p>
         </div>
       )}
       {location.pathname !== "/try-requestai" ? (
@@ -34,12 +34,8 @@ const ActionNavs = ({ submitEmail, submitContact }) => {
           Contact Us
         </Link>
       ) : (
-        <div
-          to="/contact-us"
-          onClick={submitContact}
-          className="nav nav-btn contact"
-        >
-          <p> Submit Contact Info</p>
+        <div to="/contact-us" className="nav active">
+          <p> Contact Us </p>
         </div>
       )}
     </div>
