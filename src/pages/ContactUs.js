@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../css/Home.css";
 import "../css/ContactUs.css";
@@ -8,6 +8,34 @@ const ContactUs = () => {
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [isSubmit, setIsSubmit] = useState(false);
   const [step, setStep] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
+  const [selectedSubject, setSelectedSubject] = useState("Select 1 subject"); // To store the selected subject
+
+  const subjects = ["Inquiry", "Feedback", "Partnership Request"]; // List of subjects
+
+  const handleSelect = (subject) => {
+    setSelectedSubject(subject); // Update the selected subject
+    setIsModalOpen(false); // Close the modal
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen]);
 
   useEffect(() => {
     if (isSubmit) {
@@ -48,6 +76,29 @@ const ContactUs = () => {
     e.preventDefault();
 
     setIsSubmit(true);
+  };
+
+  const modalVariants = {
+    hidden: {
+      opacity: 0,
+      y: -20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.2,
+      },
+    },
   };
 
   return (
@@ -214,11 +265,37 @@ const ContactUs = () => {
               />
             </div>
             <div className="label">
-              <label htmlFor="">Subject *</label>
-              <div className="select">
-                <p> Select 1 subject</p>
-                <img src="/svgs/angle-small-down.svg" alt="" />
+              <label htmlFor="subject">Subject *</label>
+              <div
+                className="select"
+                onClick={() => setIsModalOpen(!isModalOpen)}
+              >
+                <p>{selectedSubject}</p>
+                <img src="/svgs/angle-small-down.svg" alt="Dropdown Icon" />
               </div>
+
+              <AnimatePresence>
+                {isModalOpen && (
+                  <motion.div
+                    className="select-modal"
+                    variants={modalVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    ref={modalRef}
+                  >
+                    {subjects.map((subject) => (
+                      <motion.div
+                        key={subject}
+                        className="modal-item"
+                        onClick={() => handleSelect(subject)}
+                      >
+                        <div>{subject}</div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             <div className="label">
               <label htmlFor="">Your message *</label>
