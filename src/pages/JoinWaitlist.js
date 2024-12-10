@@ -119,45 +119,35 @@ const JoinWaitlist = () => {
 
                 {step === 2 && (
                   <motion.div
-                    className="content"
+                    className="content thank"
                     key="thankyou"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    style={{
-                      padding: 60,
-                      paddingLeft: 40,
-                      paddingRight: 40,
-                    }}
+                    style={{}}
                   >
                     <h2>
                       Thank you for joining the <br /> RequestButton waitlist!
                     </h2>
                     <div className="txt">
                       We’re thrilled to have you on board as we revolutionize
-                      dining, hospitality, and
-                      <br /> reservations. Stay tuned for exclusive updates,
-                      sneak peeks, and your early access to
-                      <br /> the future of seamless service management.
+                      dining, hospitality, and reservations. Stay tuned for
+                      exclusive updates, sneak peeks, and your early access to
+                      the future of seamless service management.
                     </div>
                   </motion.div>
                 )}
 
                 {step === 3 && (
                   <motion.div
-                    className="content"
+                    className="content email"
                     key="checkemail"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    style={{
-                      width: 700,
-                      padding: 60,
-                      paddingLeft: 40,
-                      paddingRight: 40,
-                    }}
+                    style={{}}
                   >
                     <h2>Check your email for confirmation.</h2>
                   </motion.div>
@@ -197,10 +187,36 @@ const JoinWaitlist = () => {
           <div className="feature">
             <img src="/svgs/star.svg" alt="" />
             <div className="txt">
+              <span>
+                <img src="/svgs/star.svg" alt="" />
+              </span>
               <span>Direct Feedback Opportunity</span>: Help shape the future of
               the platform with your input.
             </div>
           </div>
+        </div>
+        <div className="features-repo">
+          <div className="feature">
+            <img src="/svgs/star.svg" alt="" />
+            <div className="txt">
+              <span>Exclusive Early Access</span>: Be among the first to try our
+              groundbreaking features.
+            </div>
+          </div>
+          <div className="feature">
+            <img src="/svgs/star.svg" alt="" />
+            <div className="txt">
+              <span>Insider Perks</span>: Enjoy special benefits like discounts
+              or extended free trials.
+            </div>
+          </div>
+          <span className="feature">
+            <img src="/svgs/star.svg" alt="" />
+            <span className="txt">
+              <span>Direct Feedback Opportunity</span>: Help shape the future of
+              the platform with your input.
+            </span>
+          </span>
         </div>
         <div className="label">
           <motion.img
@@ -217,6 +233,7 @@ const JoinWaitlist = () => {
               ease: "easeInOut", // Smooth movement
             }}
           />
+
           <form action="" onSubmit={submitEmail}>
             <div className="text-field">
               <input type="email" placeholder="name@gmail.com" />
@@ -227,7 +244,6 @@ const JoinWaitlist = () => {
           </form>
           <div className="text">Your information is safe with us. </div>
         </div>
-        i
       </div>
       <ActionNavs />
     </div>

@@ -143,17 +143,12 @@ const ContactUs = () => {
 
                 {step === 2 && (
                   <motion.div
-                    className="content"
+                    className="content thank"
                     key="thankyou"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    style={{
-                      padding: 60,
-                      paddingLeft: 40,
-                      paddingRight: 40,
-                    }}
                   >
                     <h2>
                       We’ve received your message and <br /> will get back to
@@ -168,17 +163,12 @@ const ContactUs = () => {
 
                 {step === 3 && (
                   <motion.div
-                    className="content"
+                    className="content email"
                     key="checkemail"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    style={{
-                      padding: 60,
-                      paddingLeft: 40,
-                      paddingRight: 40,
-                    }}
                   >
                     <h2>
                       📬 Check your email for a confirmation of your inquiry.
@@ -193,13 +183,16 @@ const ContactUs = () => {
         )}
       </AnimatePresence>
       <img src="/svgs/AI_4.svg" alt="" className="ai_3" />
+      <img src="/svgs/ai_3_repo.svg" alt="" className="ai_3_repo" />
       <div className="main">
         <div className="left-main">
+          <img className="lg-repo" src="/svgs/request_lg.svg" alt="" />
+
           <h1>
             We would <br /> love to hear <br /> from you
           </h1>
           <div className="contain">
-            <img src="/svgs/request_lg.svg" alt="" />
+            <img className="lg" src="/svgs/request_lg.svg" alt="" />
             <div className="wrapper">
               {items.map((item, index) => (
                 <div
