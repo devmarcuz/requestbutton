@@ -87,16 +87,17 @@
   }
 
   .main {
-    overflow-y: scroll;
     z-index: 1;
     padding: 80px 136px;
     padding-top: 50px;
     padding-bottom: 20px;
+    overflow-y: scroll;
     display: flex;
     // align-items: center;
     justify-content: space-between;
+    height: 708px;
     width: 1434px;
-    height: 848px;
+    margin-bottom: 50px;
 
     .left-main {
       flex: 0.55;
